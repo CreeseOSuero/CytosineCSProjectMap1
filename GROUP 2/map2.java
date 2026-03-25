@@ -10,7 +10,6 @@ import java.util.Queue;
 import java.util.HashSet;
 import java.util.Arrays;
 
-// --- OOP IMPLEMENTATION CLASSES ---
 class Enemy {
     private int position; 
     private int speed;
@@ -33,7 +32,7 @@ class ChaserEnemy extends Enemy {
     public ChaserEnemy(int startPos, int speed) { super(startPos, speed); }
 
     @Override 
-    public void moveLogic() { /* Chase logic implemented in main loop */ }
+    public void moveLogic() { }
 }
 
 public class PD5 implements KeyListener {
@@ -58,7 +57,6 @@ public class PD5 implements KeyListener {
     int step = 0;
     boolean canMove = true;
 
-    // --- GAMEPLAY SYSTEM VARIABLES ---
     boolean hasSaltBag = false;
     int saltCount = 3;
     boolean hasMatches = false;
@@ -87,7 +85,6 @@ public class PD5 implements KeyListener {
         this.tileW = (fW / mW);
         this.tileH = (fH / mH);     
 
-        // --- LOADING & SCALING ---
         wall = scaleIcon("Images/walll.png", tileW, tileH);
         trash = scaleIcon("Images/trash.png", tileW, tileH);
         barrel = scaleIcon("Images/barrel.png", tileW, tileH);
@@ -276,7 +273,7 @@ public class PD5 implements KeyListener {
     private void checkWinCondition() {
         if (effigyCount <= 0) {
             int exitTile = 38; 
-            OP[exitTile] = 10; // Door is an Object now
+            OP[exitTile] = 10; 
             O[exitTile].setIcon(doorIcon);
             
             enemyTimer.stop();
@@ -301,7 +298,6 @@ public class PD5 implements KeyListener {
 
         if (startNode == targetNode) return;
 
-        // --- SCREEN SHAKE LOGIC ---
         if (effigyCount <= 0) {
             int dist = Math.abs((startNode % mW) - (cp % mW)) + Math.abs((startNode / mW) - (cp / mW));
             if (dist < 8) {
@@ -417,8 +413,7 @@ public class PD5 implements KeyListener {
         else if (keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) { newCp = cp + mW; currentAnim = animd; lastDir = mW; }
         else if (keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_W) { newCp = cp - mW; currentAnim = animu; lastDir = -mW; }
 
-        if (newCp != cp && newCp >= 0 && newCp < mL.length) {
-            // Check for Door (Object Type 10)
+        if (newCp != cp && newCp >= 0 && newCp < mL.length) 
             if (OP[newCp] == 10) {
                 triggerWin();
                 return;
