@@ -164,12 +164,12 @@ public class Gr7Map1 implements KeyListener, ActionListener {
         addIcon(Gr7Implementer.assetsFolder+"monster.png", 2, 4); // id 1, test tile, 0-index
         addIcon(Gr7Implementer.assetsFolder+"bed.png", 2, 3); // id 2
         addIcon(Gr7Implementer.assetsFolder+"door.png", 2, 3); // id 3
-        addIcon(Gr7Implementer.assetsFolder+"/lamp.png", 1, 2); // id 4
-        addIcon(Gr7Implementer.assetsFolder+"/painting.png", 3, 3); // id 5
-        addIcon(Gr7Implementer.assetsFolder+"/inverted_door.png", 2, 3); // id 6
-        addIcon(Gr7Implementer.assetsFolder+"/plant.png", 2, 2); // id 7
-        addIcon(Gr7Implementer.assetsFolder+"/chair.png", 1, 1); // id 8
-        addIcon(Gr7Implementer.assetsFolder+"/book.png", 12, 10); // id 9
+        addIcon(Gr7Implementer.assetsFolder+"lamp.png", 1, 2); // id 4
+        addIcon(Gr7Implementer.assetsFolder+"painting.png", 3, 3); // id 5
+        addIcon(Gr7Implementer.assetsFolder+"inverted_door.png", 2, 3); // id 6
+        addIcon(Gr7Implementer.assetsFolder+"plant.png", 2, 2); // id 7
+        addIcon(Gr7Implementer.assetsFolder+"chair.png", 1, 1); // id 8
+        addIcon(Gr7Implementer.assetsFolder+"book.png", 12, 10); // id 9
         objs = new JLabel[6];
         roomLayout = new int[mapWidth*mapHeight];
         roomLayout[79] = 6;
@@ -220,14 +220,14 @@ public class Gr7Map1 implements KeyListener, ActionListener {
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
         }; // 8, 22
         curInterLayout = lobbyInterLayout;
-        lobbyImg = loadImg(Gr7Implementer.assetsFolder+"/lobby.png", mapWidth, mapHeight);
-        roomImg = loadImg(Gr7Implementer.assetsFolder+"/room.png", mapWidth, mapHeight);
+        lobbyImg = loadImg(Gr7Implementer.assetsFolder+"lobby.png", mapWidth, mapHeight);
+        roomImg = loadImg(Gr7Implementer.assetsFolder+"room.png", mapWidth, mapHeight);
         
         lobDoor = new JLabel(getIcon(3));
         
         bg = new JLabel(lobbyImg);
         
-        alphaGrad = new JLabel(loadImg(Gr7Implementer.assetsFolder+"/alpha_grad.png", mapWidth, 3));
+        alphaGrad = new JLabel(loadImg(Gr7Implementer.assetsFolder+"alpha_grad.png", mapWidth, 3));
         
         dialogueBox = new JLabel();
         dialogueBox.setBackground(Color.BLACK);
@@ -296,7 +296,7 @@ public class Gr7Map1 implements KeyListener, ActionListener {
         frame.add(darkEffect, new Rectangle(0,0,mapWidth,mapHeight));
         frame.add(lobDoor, new Rectangle(15,2,2,3));
         
-        fragL = new JLabel(loadImg(Gr7Implementer.assetsFolder+"/paperfragment.png",1,1));
+        fragL = new JLabel(loadImg(Gr7Implementer.assetsFolder+"paperfragment.png",1,1));
         frame.add(fragL, new Rectangle(21,13,1,1));
         fragL.setVisible(false);
         
